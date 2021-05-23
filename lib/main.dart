@@ -8,6 +8,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('COD3R'),
+          centerTitle: true,
+        ),
+        body: HomePage(),
+      ),
+    );
   }
 }
