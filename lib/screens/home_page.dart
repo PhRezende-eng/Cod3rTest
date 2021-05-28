@@ -6,8 +6,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var perguntaRespondida = 0;
+
+  void responder() {
+    perguntaRespondida++;
+    print("Pergunta respondida!");
+    print(perguntaRespondida);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final List<String> perguntas = [
+      'Qual a sua cor Favortia?',
+      'Qual é o seu animal favortio?',
+      'QSeila asdflh?',
+    ];
+
+    return Column(
+      children: [
+        Text(perguntas[0]),
+        ElevatedButton(
+          child: Text('Resposta 1'),
+          onPressed: responder,
+        ),
+        ElevatedButton(
+          child: Text('Resposta 2'),
+          onPressed: responder,
+        ),
+        ElevatedButton(
+          child: Text('Resposta 3'),
+          onPressed: () {},
+        ),
+      ],
+    );
   }
 }
