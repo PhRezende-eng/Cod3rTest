@@ -10,6 +10,7 @@ class _HomePageState extends State<HomePage> {
 
   void responder() {
     setState(() {
+      //ser ver para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
       perguntaRespondida++;
     });
     print("Pergunta respondida!");
