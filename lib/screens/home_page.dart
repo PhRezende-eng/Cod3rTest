@@ -9,7 +9,9 @@ class _HomePageState extends State<HomePage> {
   var perguntaRespondida = 0;
 
   void responder() {
-    perguntaRespondida++;
+    setState(() {
+      perguntaRespondida++;
+    });
     print("Pergunta respondida!");
     print(perguntaRespondida);
   }
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
     return Column(
       children: [
-        Text(perguntas[0]),
+        Text(perguntas[perguntaRespondida]),
         ElevatedButton(
           child: Text('Resposta 1'),
           onPressed: responder,
@@ -35,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         ),
         ElevatedButton(
           child: Text('Resposta 3'),
-          onPressed: () {},
+          onPressed: responder,
         ),
       ],
     );
