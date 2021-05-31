@@ -52,7 +52,11 @@ class _HomePageState extends State<HomePage> {
                 hintText: "hintext",
                 labelText: "labeltext",
               ),
-              validator: ,
+              validator: (String? value) {
+                return (value != null && value.contains('@'))
+                    ? ' NÃO USE @ '
+                    : null;
+              },
             ),
           ),
         ],
