@@ -25,23 +25,32 @@ class _HomePageState extends State<HomePage> {
       'QSeila asdflh?',
     ];
 
-    return Column(
-      children: [
-        Text(perguntas[perguntaRespondida]),
-        ElevatedButton(
-          child: Text('Resposta 1'),
-          onPressed: responder,
-        ),
-        ElevatedButton(
-          child: Text('Resposta 2'),
-          onPressed: responder,
-        ),
-        ElevatedButton(
-          child: Text('Resposta 3'),
-          onPressed: responder,
-        ),
-        TextFormField(),
-      ],
+    return Center(
+      child: Column(
+        children: [
+          Text(perguntas[perguntaRespondida]),
+          ElevatedButton(
+            child: Text('Resposta 1'),
+            onPressed: responder,
+          ),
+          ElevatedButton(
+            child: Text('Resposta 2'),
+            onPressed: responder,
+          ),
+          ElevatedButton(
+            child: Text('Resposta 3'),
+            onPressed: responder,
+          ),
+          Container(
+            height: 150,
+            width: 190,
+            child: TextFormField(
+              cursorHeight: 10,
+              cursorColor: Colors.black,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
