@@ -42,13 +42,12 @@ class _HomePageState extends State<HomePage> {
             onPressed: responder,
           ),
           Container(
-            height: 150,
-            width: 190,
+            margin: EdgeInsets.only(left: 20, right: 50),
             child: TextFormField(
-              cursorHeight: 10,
+              cursorHeight: 20,
               cursorColor: Colors.black,
               decoration: InputDecoration(
-                icon: Icon(Icons.password),
+                icon: Icon(Icons.ac_unit_outlined),
                 hintText: "hintext",
                 labelText: "labeltext",
               ),
