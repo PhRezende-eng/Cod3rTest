@@ -47,6 +47,12 @@ class _HomePageState extends State<HomePage> {
             child: TextFormField(
               cursorHeight: 10,
               cursorColor: Colors.black,
+              decoration: InputDecoration(
+                icon: Icon(Icons.password),
+                hintText: "hintext",
+                labelText: "labeltext",
+              ),
+              validator: ,
             ),
           ),
         ],
