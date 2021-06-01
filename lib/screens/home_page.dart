@@ -9,23 +9,27 @@ class _HomePageState extends State<HomePage> {
   var perguntaRespondida = 0;
 
   void responder() {
-    // if perguntaRespondida = perguntas.
     setState(() {
       //ser ver para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
       perguntaRespondida++;
     });
+
+    if (perguntaRespondida == perguntas.length) {
+      perguntaRespondida = 0;
+    }
+
     print("Pergunta respondida!");
     print(perguntaRespondida);
   }
 
+  final List<String> perguntas = [
+    'Qual a sua cor Favortia?',
+    'Qual é o seu animal favortio?',
+    'QSeila asdflh?',
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final List<String> perguntas = [
-      'Qual a sua cor Favortia?',
-      'Qual é o seu animal favortio?',
-      'QSeila asdflh?',
-    ];
-
     return Center(
       child: Column(
         children: [
