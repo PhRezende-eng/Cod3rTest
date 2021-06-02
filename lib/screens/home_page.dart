@@ -10,7 +10,7 @@ class _HomePageState extends State<HomePage> {
 
   void responder() {
     setState(() {
-      //ser ver para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
+      //serve para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
       perguntaRespondida++;
     });
 
@@ -56,15 +56,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             padding: EdgeInsets.only(left: 20, right: 60),
-            margin: EdgeInsets.only(left: 10, right: 10),
+            margin: EdgeInsets.only(left: 30, right: 30),
             child: TextFormField(
               cursorHeight: 20,
               cursorColor: Colors.black,
+              cursorRadius: Radius.circular(10),
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.zero,
                 icon: Icon(
                   Icons.ac_unit_outlined,
                 ),
                 hintText: "hintext",
+                hintStyle: TextStyle(
+                  fontSize: 18,
+                  textBaseline: TextBaseline.alphabetic,
+                ),
                 labelText: "labeltext",
                 border: InputBorder.none,
               ),
@@ -80,3 +86,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+// FlatButton ==> TextButton
+// RaisedButton ==> ElevatedButton
