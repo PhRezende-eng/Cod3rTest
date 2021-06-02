@@ -47,6 +47,8 @@ class _HomePageState extends State<HomePage> {
             onPressed: responder,
           ),
           Container(
+            height: 60,
+            alignment: Alignment.center,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black,
