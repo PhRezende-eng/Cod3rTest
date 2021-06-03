@@ -20,6 +20,7 @@ class Input extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
+      width: 300,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
@@ -31,7 +32,7 @@ class Input extends StatelessWidget {
         // boxShadow: BoxShadow,
       ),
       padding: EdgeInsets.only(left: 20, right: 60),
-      margin: EdgeInsets.only(left: 30, right: 30),
+      margin: EdgeInsets.only(top: 10, bottom: 10),
       child: TextFormField(
         cursorColor: Colors.black,
         cursorRadius: Radius.circular(10),

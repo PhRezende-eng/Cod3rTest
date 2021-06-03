@@ -33,28 +33,29 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Question(perguntas[perguntaRespondida]),
-          Answer(answer: 'Resposta1', onpressed: responder),
-          Answer(answer: 'Resposta2', onpressed: responder),
-          Answer(answer: 'Resposta3', onpressed: responder),
-          Input(
-            label: "Label a",
-            hint: "Hint a",
-            coloricon: Colors.red,
-            colorlabel: Colors.red,
-          ),
-          SizedBox(height: 10),
-          Input(
-            label: "Label b",
-            hint: "Hint b",
-            coloricon: Colors.green,
-            colorlabel: Colors.green,
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        Question(perguntas[perguntaRespondida]),
+        Answer(answer: 'Resposta1', onpressed: responder),
+        Answer(answer: 'Resposta2', onpressed: responder),
+        Answer(answer: 'Resposta3', onpressed: responder),
+        Input(
+          label: "Label a",
+          hint: "Hint a",
+          coloricon: Colors.red,
+          colorlabel: Colors.red,
+        ),
+        SizedBox(
+          width:
+              double.infinity, //fez com que alinhasse todos os child ao centro
+        ),
+        Input(
+          label: "Label b",
+          hint: "Hint b",
+          coloricon: Colors.green,
+          colorlabel: Colors.green,
+        ),
+      ],
     );
   }
 }
