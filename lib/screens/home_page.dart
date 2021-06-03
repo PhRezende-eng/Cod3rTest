@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: responder,
           ),
           Container(
-            height: 60,
+            height: 70,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               border: Border.all(
@@ -56,24 +56,32 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.all(
                 Radius.circular(10),
               ),
+              // boxShadow: BoxShadow,
             ),
             padding: EdgeInsets.only(left: 20, right: 60),
             margin: EdgeInsets.only(left: 30, right: 30),
             child: TextFormField(
-              cursorHeight: 20,
               cursorColor: Colors.black,
               cursorRadius: Radius.circular(10),
+              style: TextStyle(
+                fontSize: 20,
+              ),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.zero,
                 icon: Icon(
                   Icons.ac_unit_outlined,
+                  color: Colors.green,
                 ),
                 hintText: "hintext",
                 hintStyle: TextStyle(
-                  fontSize: 18,
-                  textBaseline: TextBaseline.alphabetic,
+                  fontSize: 20,
+                  textBaseline: TextBaseline.ideographic,
                 ),
                 labelText: "labeltext",
+                labelStyle: TextStyle(
+                  fontSize: 18,
+                  textBaseline: TextBaseline.ideographic,
+                  color: Colors.green,
+                ),
                 border: InputBorder.none,
               ),
               validator: (String? value) {
