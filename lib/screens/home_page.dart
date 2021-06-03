@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../components/question.dart';
+import '../components/input.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     return Center(
       child: Column(
         children: [
-          Text(perguntas[perguntaRespondida]),
+          Questao(perguntas[perguntaRespondida]),
           ElevatedButton(
             child: Text('Resposta 1'),
             onPressed: responder,
@@ -46,50 +48,18 @@ class _HomePageState extends State<HomePage> {
             child: Text('Resposta 3'),
             onPressed: responder,
           ),
-          Container(
-            height: 70,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.black,
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-              // boxShadow: BoxShadow,
-            ),
-            padding: EdgeInsets.only(left: 20, right: 60),
-            margin: EdgeInsets.only(left: 30, right: 30),
-            child: TextFormField(
-              cursorColor: Colors.black,
-              cursorRadius: Radius.circular(10),
-              style: TextStyle(
-                fontSize: 20,
-              ),
-              decoration: InputDecoration(
-                icon: Icon(
-                  Icons.ac_unit_outlined,
-                  color: Colors.green,
-                ),
-                hintText: "hintext",
-                hintStyle: TextStyle(
-                  fontSize: 20,
-                  textBaseline: TextBaseline.ideographic,
-                ),
-                labelText: "labeltext",
-                labelStyle: TextStyle(
-                  fontSize: 18,
-                  textBaseline: TextBaseline.ideographic,
-                  color: Colors.green,
-                ),
-                border: InputBorder.none,
-              ),
-              validator: (String? value) {
-                return (value != null && value.contains('@'))
-                    ? ' NÃO USE @ '
-                    : null;
-              },
-            ),
+          Input(
+            label: "Label a",
+            hint: "Hint a",
+            coloricon: Colors.red,
+            colorlabel: Colors.red,
+          ),
+          SizedBox(height: 10),
+          Input(
+            label: "Label b",
+            hint: "Hint b",
+            coloricon: Colors.green,
+            colorlabel: Colors.green,
           ),
         ],
       ),
