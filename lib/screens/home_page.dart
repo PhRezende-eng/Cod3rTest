@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/question.dart';
 import '../components/input.dart';
+import '../components/answer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,19 +36,10 @@ class _HomePageState extends State<HomePage> {
     return Center(
       child: Column(
         children: [
-          Questao(perguntas[perguntaRespondida]),
-          ElevatedButton(
-            child: Text('Resposta 1'),
-            onPressed: responder,
-          ),
-          ElevatedButton(
-            child: Text('Resposta 2'),
-            onPressed: responder,
-          ),
-          ElevatedButton(
-            child: Text('Resposta 3'),
-            onPressed: responder,
-          ),
+          Question(perguntas[perguntaRespondida]),
+          Answer(answer: 'Resposta1', onpressed: responder),
+          Answer(answer: 'Resposta2', onpressed: responder),
+          Answer(answer: 'Resposta3', onpressed: responder),
           Input(
             label: "Label a",
             hint: "Hint a",

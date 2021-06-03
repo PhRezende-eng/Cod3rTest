@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Questao extends StatelessWidget {
+class Question extends StatelessWidget {
   final String texto;
 
-  Questao(this.texto);
+  Question(this.texto);
 
-  // const Questao({Key? key}) : super(key: key);
+  // const Question({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
