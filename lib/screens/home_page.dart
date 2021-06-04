@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var perguntaRespondida = 0;
+  var numerodaPergunta = 1;
 
   void responder() {
     setState(() {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     print("Pergunta respondida!");
-    print(perguntaRespondida);
+    print('Posição ${perguntaRespondida + numerodaPergunta}');
   }
 
   final List<String> perguntas = [
@@ -51,8 +52,8 @@ class _HomePageState extends State<HomePage> {
         Input(
           label: "Label a",
           hint: "Hint a",
-          coloricon: Colors.red,
-          colorlabel: Colors.red,
+          coloricon: Colors.amber,
+          colorlabel: Colors.amber,
         ),
         SizedBox(
           width:
@@ -61,8 +62,8 @@ class _HomePageState extends State<HomePage> {
         Input(
           label: "Label b",
           hint: "Hint b",
-          coloricon: Colors.green,
-          colorlabel: Colors.green,
+          coloricon: Colors.amber,
+          colorlabel: Colors.amber,
         ),
       ],
     );

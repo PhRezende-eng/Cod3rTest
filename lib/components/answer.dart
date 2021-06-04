@@ -11,9 +11,22 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      child: Text(answer),
-      onPressed: onpressed,
+    return Container(
+      width: 200,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            Colors.amber,
+          ),
+        ),
+        child: Text(
+          answer,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        onPressed: onpressed,
+      ),
     );
   }
 }
