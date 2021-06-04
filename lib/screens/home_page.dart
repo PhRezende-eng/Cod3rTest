@@ -27,9 +27,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<String> perguntas = [
-    'Qual a sua cor Favortia?',
-    'Qual é o seu animal favortio?',
-    'QSeila asdflh?',
+    'Qual a sua cor favortia?',
+    'Qual é o seu animal favorito?',
+    'Qual foi a primeira escola que você estudou?',
   ];
 
   @override
