@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
     'Qual a sua cor favortia?',
     'Qual é o seu animal favorito?',
     'Qual foi a primeira escola que você estudou?',
+    'Última pergunta...',
   ];
 
   @override
