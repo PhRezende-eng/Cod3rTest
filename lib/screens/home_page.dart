@@ -9,47 +9,71 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var perguntaRespondida = 0;
+  var index = 0;
   var numerodaPergunta = 1;
 
   void responder() {
     setState(() {
       //serve para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
-      perguntaRespondida++;
+      index++;
     });
 
-    if (perguntaRespondida == perguntas.length) {
-      perguntaRespondida = 0;
+    if (index == perguntas.length) {
+      index = 0;
     }
 
     print("Pergunta respondida!");
-    print('Posição ${perguntaRespondida + numerodaPergunta}');
+    print('Posição ${index + numerodaPergunta}');
   }
 
-  final List<String> perguntas = [
-    'Qual a sua cor favortia?',
-    'Qual é o seu animal favorito?',
-    'Qual foi a primeira escola que você estudou?',
-    'Última pergunta ?',
+  final List<Map<String, dynamic>> perguntas = [
+    // List<Map<Chave, Valor>>
+    // List<Map<String, Object>>
+
+    {
+      'text': 'Qual a sua cor favortia?',
+      'answer': [
+        'Amarelo',
+        'Azul',
+        'Preto',
+        'Lilás',
+      ],
+    },
+    {
+      'text': 'Qual é o seu animal favorito?',
+      'answer': [
+        'Cachorro',
+        'Gato',
+        'Galo',
+        'Galinha',
+      ],
+    },
+    {
+      'text': 'Qual foi a primeira escola que você estudou?',
+      'answer': [
+        '402 N',
+        '102 N',
+        'FGA',
+        'Martista',
+      ],
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> respostas = [];
+    for (String answerText in perguntas[index]['answer']) {
+      respostas.add(
+        Answer(
+          answerText,
+          responder,
+        ),
+      );
+    }
     return Column(
       children: [
-        Question(perguntas[perguntaRespondida]),
-        Answer(
-          'Resposta1',
-          responder,
-        ),
-        Answer(
-          'Resposta2',
-          responder,
-        ),
-        Answer(
-          'Resposta3',
-          responder,
-        ),
+        Question(perguntas[index]['text']),
+        ...respostas,
         Input(
           label: "Label a",
           hint: "Hint a",
