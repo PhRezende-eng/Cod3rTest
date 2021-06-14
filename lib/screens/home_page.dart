@@ -72,7 +72,8 @@ class _HomePageState extends State<HomePage> {
     List<Widget> widgets = haveSelectedQuestion
         ? allQuestions
             .map(
-              (t) => Answer(t, toAnswer),
+              (answer) => Answer(answer,
+                  toAnswer), //transforma "answer" em um component do tipo "Answer"
             )
             .toList()
         : [];
