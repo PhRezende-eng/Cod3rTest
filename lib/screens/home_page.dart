@@ -1,3 +1,4 @@
+import 'package:app/components/result.dart';
 import 'package:flutter/material.dart';
 import '../components/question.dart';
 import '../components/input.dart';
@@ -9,24 +10,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var index = 0;
-  var numerodaPergunta = 1;
+  bool get haveSelectedQuestion {
+    return index < questions.length;
+  }
 
-  void responder() {
+  var index = 0;
+  var questionNumber = 1;
+
+  void toAnswer() {
     setState(() {
       //serve para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
       index++;
     });
 
-    if (index == perguntas.length) {
-      index = 0;
-    }
+    // if (index == questions.length) {
+    //   index = 0;
+    // }
 
     print("Pergunta respondida!");
-    print('Posição ${index + numerodaPergunta}');
+    print('Posição ${index + questionNumber}');
   }
 
-  final List<Map<String, dynamic>> perguntas = [
+  final List<Map<String, dynamic>> questions = [
     // List<Map<Chave, Valor>>
     // List<Map<String, Object>>
 
@@ -61,37 +66,54 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> respostas = [];
-    for (String answerText in perguntas[index]['answer']) {
-      respostas.add(
-        Answer(
-          answerText,
-          responder,
-        ),
-      );
-    }
-    return Column(
-      children: [
-        Question(perguntas[index]['text']),
-        ...respostas,
-        Input(
-          label: "Label a",
-          hint: "Hint a",
-          coloricon: Colors.amber,
-          colorlabel: Colors.amber,
-        ),
-        SizedBox(
-          width:
-              double.infinity, //fez com que alinhasse todos os child ao centro
-        ),
-        Input(
-          label: "Label b",
-          hint: "Hint b",
-          coloricon: Colors.amber,
-          colorlabel: Colors.amber,
-        ),
-      ],
-    );
+    // Size size = MediaQuery.of(context).size;
+    List<String> allQuestions =
+        haveSelectedQuestion ? questions[index]['answer'] : [];
+    List<Widget> widgets = haveSelectedQuestion
+        ? allQuestions
+            .map(
+              (t) => Answer(t, toAnswer),
+            )
+            .toList()
+        : [];
+
+    // List<Widget> widgets = [];
+
+    // for (String answerText in allQuestions) {
+    //   widgets.add(
+    //     Answer(
+    //       answerText,
+    //       toAnswer,
+    //     ),
+    //   );
+    // }
+
+    return haveSelectedQuestion
+        ? Column(
+            children: [
+              Question(
+                questions[index]['text'],
+              ),
+              ...widgets,
+              Input(
+                label: "Label a",
+                hint: "Hint a",
+                coloricon: Colors.amber,
+                colorlabel: Colors.amber,
+              ),
+              SizedBox(
+                width: double
+                    .infinity, //fez com que alinhasse todos os child ao centro
+              ),
+              Input(
+                label: "Label b",
+                hint: "Hint b",
+                coloricon: Colors.amber,
+                colorlabel: Colors.amber,
+              ),
+            ],
+          )
+        : ResultComponent('Parabéns!!!');
   }
 }
 
