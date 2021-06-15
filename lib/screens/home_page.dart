@@ -1,7 +1,6 @@
-import 'package:app/components/result.dart';
+import 'package:app/widgets/result.dart';
 import 'package:flutter/material.dart';
-import '../components/question.dart';
-// import '../components/input.dart';
+import '../widgets/quiz.dart';
 import '../components/answer.dart';
 
 class HomePage extends StatefulWidget {
