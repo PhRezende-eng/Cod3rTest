@@ -1,7 +1,7 @@
 import 'package:app/components/result.dart';
 import 'package:flutter/material.dart';
 import '../components/question.dart';
-import '../components/input.dart';
+// import '../components/input.dart';
 import '../components/answer.dart';
 
 class HomePage extends StatefulWidget {
@@ -93,28 +93,26 @@ class _HomePageState extends State<HomePage> {
         ? Column(
             children: [
               Question(
-                questions[index]['text'],
+                textQuestion: questions[index]['text'],
               ),
               ...widgets,
-              Input(
-                label: "Label a",
-                hint: "Hint a",
-                coloricon: Colors.amber,
-                colorlabel: Colors.amber,
-              ),
-              SizedBox(
-                width: double
-                    .infinity, //fez com que alinhasse todos os child ao centro
-              ),
-              Input(
-                label: "Label b",
-                hint: "Hint b",
-                coloricon: Colors.amber,
-                colorlabel: Colors.amber,
-              ),
+              // Input(
+              //   label: "Label a",
+              //   hint: "Hint a",
+              //   coloricon: Colors.amber,
+              //   colorlabel: Colors.amber,
+              // ),
+              // Input(
+              //   label: "Label b",
+              //   hint: "Hint b",
+              //   coloricon: Colors.amber,
+              //   colorlabel: Colors.amber,
+              // ),
             ],
           )
-        : ResultComponent('Parabéns!!!');
+        : ResultComponent(
+            textResult: 'Parabéns!!!',
+          );
   }
 }
 
