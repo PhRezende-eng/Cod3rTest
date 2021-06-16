@@ -13,12 +13,12 @@ class Input extends StatelessWidget {
     required this.colorlabel,
   });
   // const Input(                             ----> é uma outra forma de se fazer
-  //       {required this.label,
-  //       required this.hint,
-  //       required this.coloricon,
-  //       required this.colorlabel,
-  //       })
-  //       ;
+  // {required this.label,
+  // required this.hint,
+  // required this.coloricon,
+  // required this.colorlabel,
+  // Key? key})
+  // : super(key: key);
 
   // const Input({  ****      required this.       ****,Key? key}) : super(key: key);
 
