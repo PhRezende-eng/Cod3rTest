@@ -6,13 +6,19 @@ class Input extends StatelessWidget {
   final Color colorlabel;
   final Color coloricon;
 
-  const Input(
-      {required this.label,
-      required this.hint,
-      required this.coloricon,
-      required this.colorlabel,
-      Key? key})
-      : super(key: key);
+  const Input({
+    required this.label,
+    required this.hint,
+    required this.coloricon,
+    required this.colorlabel,
+  });
+  // const Input(                             ----> é uma outra forma de se fazer
+  //       {required this.label,
+  //       required this.hint,
+  //       required this.coloricon,
+  //       required this.colorlabel,
+  //       })
+  //       ;
 
   // const Input({  ****      required this.       ****,Key? key}) : super(key: key);
 
