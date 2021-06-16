@@ -1,3 +1,4 @@
+import 'package:app/components/input.dart';
 import 'package:app/widgets/result.dart';
 import 'package:flutter/material.dart';
 import '../widgets/quiz.dart';
@@ -95,18 +96,18 @@ class _HomePageState extends State<HomePage> {
                 textQuestion: questions[index]['text'],
               ),
               ...widgets,
-              // Input(
-              //   label: "Label a",
-              //   hint: "Hint a",
-              //   coloricon: Colors.amber,
-              //   colorlabel: Colors.amber,
-              // ),
-              // Input(
-              //   label: "Label b",
-              //   hint: "Hint b",
-              //   coloricon: Colors.amber,
-              //   colorlabel: Colors.amber,
-              // ),
+              Input(
+                label: "Label a",
+                hint: "Hint a",
+                coloricon: Colors.amber,
+                colorlabel: Colors.amber,
+              ),
+              Input(
+                label: "Label b",
+                hint: "Hint b",
+                coloricon: Colors.amber,
+                colorlabel: Colors.amber,
+              ),
             ],
           )
         : ResultComponent(
