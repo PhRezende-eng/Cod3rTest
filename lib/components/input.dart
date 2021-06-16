@@ -20,7 +20,7 @@ class Input extends StatelessWidget {
   // Key? key})
   // : super(key: key);
 
-  // const Input({  ****      required this.       ****,Key? key}) : super(key: key);
+  // const Input( posicional    ->     this.paramenter,{ nominal   ->  required this.paramenter || this.paramenter Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
