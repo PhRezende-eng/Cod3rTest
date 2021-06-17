@@ -1,3 +1,4 @@
+import 'package:app/components/button.dart';
 import 'package:flutter/material.dart';
 
 class ResultComponent extends StatelessWidget {
@@ -20,11 +21,9 @@ class ResultComponent extends StatelessWidget {
               fontSize: 60,
             ),
           ),
-          ElevatedButton(
-            onPressed: onPressed,
-            child: Text(
-              'Pressione aqui para voltar',
-            ),
+          Button(
+            'Pressione aqui para voltar',
+            onPressed,
           ),
         ],
       ),

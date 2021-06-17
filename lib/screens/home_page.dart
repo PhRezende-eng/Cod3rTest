@@ -16,10 +16,12 @@ class _HomePageState extends State<HomePage> {
 
   var index = 0;
   var questionNumber = 1;
+  var fullNote = 0;
 
   void func() {
     setState(() {
       index = 0;
+      fullNote = 0;
     });
   }
 
@@ -46,19 +48,19 @@ class _HomePageState extends State<HomePage> {
       'answer': [
         {
           'texto': 'Preto',
-          'valor': 10,
+          'pontuation': 10,
         },
         {
           'texto': 'Vermelho',
-          'valor': 5,
+          'pontuation': 5,
         },
         {
           'texto': 'Verde',
-          'valor': 3,
+          'pontuation': 3,
         },
         {
           'texto': 'Branco',
-          'valor': 1,
+          'pontuation': 1,
         },
       ],
     },
@@ -67,19 +69,19 @@ class _HomePageState extends State<HomePage> {
       'answer': [
         {
           'texto': 'Coelho',
-          'valor': 10,
+          'pontuation': 10,
         },
         {
           'texto': 'Cobra',
-          'valor': 5,
+          'pontuation': 5,
         },
         {
           'texto': 'Elefante',
-          'valor': 3,
+          'pontuation': 3,
         },
         {
           'texto': 'leão',
-          'valor': 1,
+          'pontuation': 1,
         },
       ],
     },
@@ -88,19 +90,19 @@ class _HomePageState extends State<HomePage> {
       'answer': [
         {
           'texto': '104 Norte',
-          'valor': 10,
+          'pontuation': 10,
         },
         {
           'texto': 'Marista',
-          'valor': 5,
+          'pontuation': 5,
         },
         {
           'texto': 'FGA',
-          'valor': 3,
+          'pontuation': 3,
         },
         {
           'texto': '302 Norte',
-          'valor': 1,
+          'pontuation': 1,
         },
       ],
     },
