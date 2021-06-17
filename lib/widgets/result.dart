@@ -2,17 +2,31 @@ import 'package:flutter/material.dart';
 
 class ResultComponent extends StatelessWidget {
   final String textResult;
-  const ResultComponent({required this.textResult, Key? key}) : super(key: key);
+  final VoidCallback onPressed;
+  const ResultComponent(
+      {required this.textResult, required this.onPressed, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
     return Center(
-      child: Text(
-        textResult,
-        style: TextStyle(
-          fontSize: 60,
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            textResult,
+            style: TextStyle(
+              fontSize: 60,
+            ),
+          ),
+          ElevatedButton(
+            onPressed: onPressed,
+            child: Text(
+              'Pressione aqui para voltar',
+            ),
+          ),
+        ],
       ),
     );
   }

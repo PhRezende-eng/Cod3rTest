@@ -2,7 +2,7 @@ import 'package:app/components/input.dart';
 import 'package:app/widgets/result.dart';
 import 'package:flutter/material.dart';
 import '../widgets/quiz.dart';
-import '../components/answer.dart';
+import '../components/button.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,6 +16,12 @@ class _HomePageState extends State<HomePage> {
 
   var index = 0;
   var questionNumber = 1;
+
+  void func() {
+    setState(() {
+      index = 0;
+    });
+  }
 
   void toAnswer() {
     setState(() {
@@ -38,28 +44,64 @@ class _HomePageState extends State<HomePage> {
     {
       'text': 'Qual a sua cor favortia?',
       'answer': [
-        'Amarelo',
-        'Azul',
-        'Preto',
-        'Lilás',
+        {
+          'texto': 'Preto',
+          'valor': 10,
+        },
+        {
+          'texto': 'Vermelho',
+          'valor': 5,
+        },
+        {
+          'texto': 'Verde',
+          'valor': 3,
+        },
+        {
+          'texto': 'Branco',
+          'valor': 1,
+        },
       ],
     },
     {
       'text': 'Qual é o seu animal favorito?',
       'answer': [
-        'Cachorro',
-        'Gato',
-        'Galo',
-        'Galinha',
+        {
+          'texto': 'Coelho',
+          'valor': 10,
+        },
+        {
+          'texto': 'Cobra',
+          'valor': 5,
+        },
+        {
+          'texto': 'Elefante',
+          'valor': 3,
+        },
+        {
+          'texto': 'leão',
+          'valor': 1,
+        },
       ],
     },
     {
       'text': 'Qual foi a primeira escola que você estudou?',
       'answer': [
-        '402 N',
-        '102 N',
-        'FGA',
-        'Martista',
+        {
+          'texto': '104 Norte',
+          'valor': 10,
+        },
+        {
+          'texto': 'Marista',
+          'valor': 5,
+        },
+        {
+          'texto': 'FGA',
+          'valor': 3,
+        },
+        {
+          'texto': '302 Norte',
+          'valor': 1,
+        },
       ],
     },
   ];
@@ -67,13 +109,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
-    List<String> allQuestions =
+    List<Map<String, dynamic>> allQuestions =
         haveSelectedQuestion ? questions[index]['answer'] : [];
     List<Widget> widgets = haveSelectedQuestion
         ? allQuestions
             .map(
-              (answer) => Answer(answer,
-                  toAnswer), //transforma "answer" em um component do tipo "Answer"
+              (answer) => Button(
+                answer['texto'],
+                toAnswer,
+              ), //transforma "answer" em um component do tipo "Button"
             )
             .toList()
         : [];
@@ -82,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
     // for (String answerText in allQuestions) {
     //   widgets.add(
-    //     Answer(
+    //     Button(
     //       answerText,
     //       toAnswer,
     //     ),
@@ -112,6 +156,7 @@ class _HomePageState extends State<HomePage> {
           )
         : ResultComponent(
             textResult: 'Parabéns!!!',
+            onPressed: func,
           );
   }
 }
