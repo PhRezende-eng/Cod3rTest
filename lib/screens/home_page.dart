@@ -14,27 +14,40 @@ class _HomePageState extends State<HomePage> {
     return index < questions.length;
   }
 
+  get resultPhrase {
+    if (fullPontuation < 8) {
+      return 'Iniciante';
+    } else if (fullPontuation < 15) {
+      return 'Intermediário';
+    } else if (fullPontuation < 20) {
+      return 'Mestre';
+    } else {
+      return 'Jedi';
+    }
+  }
+
   var index = 0;
   var questionNumber = 1;
-  var fullNote = 0;
+  var fullPontuation = 0;
 
   void func() {
     setState(() {
       index = 0;
-      fullNote = 0;
+      fullPontuation = 0;
     });
   }
 
-  void toAnswer() {
+  void toAnswer(int pontuation) {
     setState(() {
       //serve para notifcar a interface gráfica que houve uma mudança, pois ela está alterando a variável
       index++;
+      fullPontuation += pontuation;
     });
 
     // if (index == questions.length) {
     //   index = 0;
     // }
-
+    print('Full pontuação $fullPontuation');
     print("Pergunta respondida!");
     print('Posição ${index + questionNumber}');
   }
@@ -114,14 +127,18 @@ class _HomePageState extends State<HomePage> {
     List<Map<String, dynamic>> allQuestions =
         haveSelectedQuestion ? questions[index]['answer'] : [];
     List<Widget> widgets = haveSelectedQuestion
-        ? allQuestions
-            .map(
-              (answer) => Button(
+        ? allQuestions.map(
+            (answer) {
+              return Button(
                 answer['texto'],
-                toAnswer,
-              ), //transforma "answer" em um component do tipo "Button"
-            )
-            .toList()
+                () => toAnswer(answer['pontuation']),
+              ); //transforma "answer" em um component do tipo "Button"
+            },
+            //  (answer) => Button(
+            //     answer['texto'],
+            //     () => toAnswer(answer['pontuation']),
+            //   ), //
+          ).toList()
         : [];
 
     // List<Widget> widgets = [];
@@ -157,7 +174,8 @@ class _HomePageState extends State<HomePage> {
             ],
           )
         : ResultComponent(
-            textResult: 'Parabéns!!!',
+            textResult:
+                'A sua pontuação total foi: $fullPontuation.\n Você é $resultPhrase!\n',
             onPressed: func,
           );
   }

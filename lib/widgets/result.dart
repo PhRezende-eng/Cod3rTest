@@ -20,6 +20,7 @@ class ResultComponent extends StatelessWidget {
             style: TextStyle(
               fontSize: 60,
             ),
+            textAlign: TextAlign.center,
           ),
           Button(
             'Pressione aqui para voltar',
