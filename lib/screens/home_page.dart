@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     // List<Map<String, Object>>
 
     {
-      'text': 'Qual a sua cor favortia?',
+      'text': 'Qual a sua cor favorita?',
       'answer': [
         {
           'texto': 'Preto',
